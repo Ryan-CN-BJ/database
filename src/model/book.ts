@@ -10,7 +10,7 @@ interface BookAttributes {
   publishDate:Date
 }
 
-interface BookCreationAttributes extends Optional<BookAttributes,'id'>{}
+export interface BookCreationAttributes extends Optional<BookAttributes,'id'>{}
 
 class Book extends Model<BookAttributes, BookCreationAttributes> implements BookAttributes {
   declare id: number
@@ -53,3 +53,5 @@ Book.init({
   timestamps: true,
   paranoid: true
 })
+
+export default Book

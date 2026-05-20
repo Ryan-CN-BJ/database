@@ -7,10 +7,9 @@ interface StudentAttributes {
   birthday: Date
   sex:boolean
   mobile:string
-  classId?: number
 }
 
-interface StudentCreationAttributes extends Optional<StudentAttributes,'id'>{}
+export interface StudentCreationAttributes extends Optional<StudentAttributes,'id'>{}
 
 class Student extends Model<StudentAttributes, StudentCreationAttributes> implements StudentAttributes {
   declare id: number
@@ -18,7 +17,6 @@ class Student extends Model<StudentAttributes, StudentCreationAttributes> implem
   declare birthday: Date
   declare sex:boolean
   declare mobile:string
-  declare classId?: number
 }
 
 Student.init({
@@ -43,10 +41,6 @@ Student.init({
         type: DataTypes.STRING(11),
         allowNull: false
     },
-    classId: {
-        type: DataTypes.INTEGER,
-        allowNull: true
-    }
 },{
     sequelize,
     modelName: 'Student',
@@ -54,6 +48,5 @@ Student.init({
     paranoid: true
 })
 
-Student.belongsTo('Class')
 
 export default Student

@@ -8,7 +8,7 @@ interface AdminAttributes {
   name:string
 }
 
-interface AdminCreationAttributes extends Optional<AdminAttributes, 'id'> {}
+export interface AdminCreationAttributes extends Optional<AdminAttributes, 'id'> {}
 
 class Admin extends Model<AdminAttributes, AdminCreationAttributes> implements AdminAttributes {
   declare id: number

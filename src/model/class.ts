@@ -1,5 +1,6 @@
 import sequelize from "./db.js";
 import { DataTypes, Model, Optional } from 'sequelize'
+import Student from './student.js'
 
 interface ClassAttributes {
   id: number
@@ -7,7 +8,7 @@ interface ClassAttributes {
   openDate: Date
 }
 
-interface ClassCreationAttributes extends Optional<ClassAttributes, 'id'> {}
+export interface ClassCreationAttributes extends Optional<ClassAttributes, 'id'> {}
 
 class Class extends Model<ClassAttributes, ClassCreationAttributes> implements ClassAttributes {
   declare id: number
@@ -36,6 +37,5 @@ Class.init({
     paranoid: true
 })
 
-Class.hasMany('Student')
-
+Class.hasMany(Student)
 export default Class
