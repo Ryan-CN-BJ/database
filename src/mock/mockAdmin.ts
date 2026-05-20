@@ -6,7 +6,7 @@ export default function mockAdmin(){
         'datas|16':[
             {
                 loginId:'@email()',
-                loginPassword:'@string(10, 16)',
+                loginPassword:'@string("number", 10, 16)',
                 name:'@cname()',
             }
         ]
