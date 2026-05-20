@@ -1,9 +1,10 @@
-import sequelize from "./model/sync.js"
+import initDB from "./model/sync.js"
 import { addAdmin,deleteAdmin } from "./services/adminService.js";
 
 
+
 async function main(){
-    await sequelize.sync({force:true})
+    await initDB()
     await addAdmin({
         loginId: 'admin',
         loginPassword: '123456',
