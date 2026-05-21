@@ -13,18 +13,26 @@ async function getBookList(){
     const $ = cheerio.load(data)
     const anchors = $('section li .product_pod .image_container a')
     const detailUrls = anchors.toArray().map((a) => {
-        return a.attribs['href']
+        return new URL(a.attribs['href'], 'http://books.toscrape.com/').href
     })
     return detailUrls
 }
 
-async function getBookDetails(){
-    const detailUrls = await getBookList()
-    const urls = detailUrls.map((item) => {
-        console.log(item,'item---')
-        return  new URL(item, 'http://books.toscrape.com/').href
-    })
-    console.log(urls,'urls')
+async function getBookDetail(detailUrl){
+    const res = await axios.get(detailUrl)
+    const data = res.data
+    const $ = cheerio.load(data)
+    const bookname = $('.product_main h1').text().trim()
+    return bookname
 }
 
-getBookDetails()
+getBookList().then((res)=>{
+    const promises = []
+    res.forEach(async (item) => {
+        promises.push(getBookDetail(item))
+    })
+    Promise.allSettled(promises).then((res)=>{
+        const arr = res.map(item => item.value)
+        console.log(arr,'arr---')
+    })
+})
