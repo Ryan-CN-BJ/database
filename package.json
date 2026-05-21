@@ -16,6 +16,8 @@
   "description": "",
   "dependencies": {
     "@types/node": "^25.8.0",
+    "axios": "^1.16.1",
+    "cheerio": "^1.2.0",
     "database": "link:",
     "mysql2": "^3.22.3",
     "sequelize": "^6.37.8",

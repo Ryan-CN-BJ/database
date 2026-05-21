@@ -3,7 +3,7 @@ import Student from "../model/student.js";
 
 export default function mockStudent(){
     const students = Mock.mock({
-        'datas|16':[
+        'datas|200':[
             {
                 name:'@cname()',
                 birthday:'@date("yyyy-MM-dd")',
