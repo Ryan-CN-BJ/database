@@ -19,11 +19,14 @@
     "axios": "^1.16.1",
     "cheerio": "^1.2.0",
     "database": "link:",
+    "md5": "^2.3.0",
+    "moment": "^2.30.1",
     "mysql2": "^3.22.3",
     "sequelize": "^6.37.8",
     "typescript": "^6.0.3"
   },
   "devDependencies": {
+    "@types/md5": "^2.3.6",
     "@types/mockjs": "^1.0.10",
     "mockjs": "^1.1.0",
     "tsx": "^4.22.0"

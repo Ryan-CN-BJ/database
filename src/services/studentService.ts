@@ -31,8 +31,8 @@ export async function getStudents(page:number = 1,pageSize:number = 10){
 export async function getStudents2(page:number = 1,pageSize:number = 10){
     const res = await Student.findAndCountAll({
         offset:(page-1)*pageSize,
-        limit:pageSize  
-    })
+        limit:pageSize,
+    }) 
     if(res){
         return JSON.parse(JSON.stringify(res))
     }

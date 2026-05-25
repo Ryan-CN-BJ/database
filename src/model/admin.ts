@@ -1,20 +1,29 @@
 import sequelize from './db.js'
-import { DataTypes, Model, Optional } from 'sequelize'
+import { DataTypes, Model, Optional, InferAttributes, InferCreationAttributes, CreationOptional } from 'sequelize'
 
 interface AdminAttributes {
   id: number
   loginId: string
   loginPassword: string
-  name:string
+  name: string
 }
+
+export type AdminDTO = Pick<AdminAttributes, 'id' | 'loginId'>;
 
 export interface AdminCreationAttributes extends Optional<AdminAttributes, 'id'> {}
 
-class Admin extends Model<AdminAttributes, AdminCreationAttributes> implements AdminAttributes {
-  declare id: number
+class Admin extends Model<
+  InferAttributes<Admin, { omit: 'createdAt' | 'updatedAt' | 'deletedAt' }>,
+  InferCreationAttributes<Admin, { omit: 'createdAt' | 'updatedAt' | 'deletedAt' }>
+> {
+  declare id: CreationOptional<number>
   declare loginId: string
   declare loginPassword: string
   declare name: string
+
+  declare readonly createdAt: Date
+  declare readonly updatedAt: Date
+  declare readonly deletedAt: Date | null
 }
 
 Admin.init({

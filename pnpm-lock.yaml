@@ -1,12 +1,15 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@types/md5': ^2.3.6
   '@types/mockjs': ^1.0.10
   '@types/node': ^25.8.0
   axios: ^1.16.1
   cheerio: ^1.2.0
   database: 'link:'
+  md5: ^2.3.0
   mockjs: ^1.1.0
+  moment: ^2.30.1
   mysql2: ^3.22.3
   sequelize: ^6.37.8
   tsx: ^4.22.0
@@ -17,11 +20,14 @@ dependencies:
   axios: 1.16.1
   cheerio: 1.2.0
   database: 'link:'
+  md5: 2.3.0
+  moment: 2.30.1
   mysql2: 3.22.3_@types+node@25.8.0
   sequelize: 6.37.8_mysql2@3.22.3
   typescript: 6.0.3
 
 devDependencies:
+  '@types/md5': 2.3.6
   '@types/mockjs': 1.0.10
   mockjs: 1.1.0
   tsx: 4.22.0
@@ -242,6 +248,10 @@ packages:
       '@types/ms': 2.1.0
     dev: false
 
+  /@types/md5/2.3.6:
+    resolution: {integrity: sha512-WD69gNXtRBnpknfZcb4TRQ0XJQbUPZcai/Qdhmka3sxUR3Et8NrXoeAoknG/LghYHTf4ve795rInVYHBTQdNVA==}
+    dev: true
+
   /@types/mockjs/1.0.10:
     resolution: {integrity: sha512-SXgrhajHG7boLv6oU93CcmdDm0HYRiceuz6b+7z+/2lCJPTWDv0V5YiwFHT2ejE4bQqgSXQiVPQYPWv7LGsK1g==}
     dev: true
@@ -302,6 +312,10 @@ packages:
       function-bind: 1.1.2
     dev: false
 
+  /charenc/0.0.2:
+    resolution: {integrity: sha512-yrLQ/yVUFXkzg7EDQsPieE/53+0RlaWTs+wBrvW36cyilJ2SaDWfl4Yj7MtLTXleV9uEKefbAGUPv2/iWSooRA==}
+    dev: false
+
   /cheerio-select/2.1.0:
     resolution: {integrity: sha512-9v9kG0LvzrlcungtnJtpGNxY+fzECQKhK4EGJX2vByejiMX84MFNQw4UxPJl3bFbTMw+Dfs37XaIkCwTZfLh4g==}
     dependencies:
@@ -341,6 +355,10 @@ packages:
     resolution: {integrity: sha512-H+y0Jo/T1RZ9qPP4Eh1pkcQcLRglraJaSLoyOtHxu6AapkjWVCy2Sit1QQ4x3Dng8qDlSsZEet7g5Pq06MvTgw==}
     engines: {node: '>=20'}
     dev: true
+
+  /crypt/0.0.2:
+    resolution: {integrity: sha512-mCxBlsHFYh9C+HVpiEacem8FEBnMXgU9gy4zmNC+SXAZNB/1idgp/aulFJ4FgCi7GPEVbfyng092GqL2k2rmow==}
+    dev: false
 
   /css-select/5.2.2:
     resolution: {integrity: sha512-TizTzUddG/xYLA3NXodFM0fSbNizXjOKhqiQQwvhlspadZokn1KDy0NZFS0wuEubIYAV5/c1/lAr0TaaFXEXzw==}
@@ -627,6 +645,10 @@ packages:
     engines: {'0': node >= 0.4.0}
     dev: false
 
+  /is-buffer/1.1.6:
+    resolution: {integrity: sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==}
+    dev: false
+
   /is-property/1.0.2:
     resolution: {integrity: sha512-Ks/IoX00TtClbGQr4TWXemAnktAQvYB7HzcCxDGqEZU6oCmb2INHuOoKxbtR+HFkmYWBKv/dOZtGRiAjDhj92g==}
     dev: false
@@ -647,6 +669,14 @@ packages:
   /math-intrinsics/1.1.0:
     resolution: {integrity: sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==}
     engines: {node: '>= 0.4'}
+    dev: false
+
+  /md5/2.3.0:
+    resolution: {integrity: sha512-T1GITYmFaKuO91vxyoQMFETst+O71VUPEU3ze5GNzDm0OWdP8v1ziTaAEPUr/3kLsY3Sftgz242A1SetQiDL7g==}
+    dependencies:
+      charenc: 0.0.2
+      crypt: 0.0.2
+      is-buffer: 1.1.6
     dev: false
 
   /mime-db/1.52.0:
